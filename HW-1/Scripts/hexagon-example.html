@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.8.10/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "bearing": -27.36,
+    "latitude": 40.8518,
+    "longitude": 14.2681,
+    "maxZoom": 15,
+    "minZoom": 5,
+    "pitch": 40.5,
+    "zoom": 6
+  },
+  "layers": [
+    {
+      "@@type": "GridLayer",
+      "autoHighlight": true,
+      "colorRange": [
+        [
+          0,
+          0,
+          255,
+          50
+        ],
+        [
+          255,
+          0,
+          0,
+          255
+        ]
+      ],
+      "coverage": 1,
+      "data": [
+        {
+          "City": "Naples",
+          "Count": 2964,
+          "Latitude": 40.8358846,
+          "Longitude": 14.2487679
+        },
+        {
+          "City": "Rome",
+          "Count": 965,
+          "Latitude": 41.8933203,
+          "Longitude": 12.4829321
+        },
+        {
+          "City": "Milan",
+          "Count": 775,
+          "Latitude": 45.4641943,
+          "Longitude": 9.1896346
+        },
+        {
+          "City": "Turin",
+          "Count": 471,
+          "Latitude": 45.0677551,
+          "Longitude": 7.6824892
+        },
+        {
+          "City": "Florence",
+          "Count": 370,
+          "Latitude": 43.7698712,
+          "Longitude": 11.2555757
+        },
+        {
+          "City": "Padova",
+          "Count": 323,
+          "Latitude": 45.4077172,
+          "Longitude": 11.8734455
+        },
+        {
+          "City": "Bologna",
+          "Count": 318,
+          "Latitude": 44.4938203,
+          "Longitude": 11.3426327
+        },
+        {
+          "City": "Pisa",
+          "Count": 305,
+          "Latitude": 43.7159395,
+          "Longitude": 10.4018624
+        },
+        {
+          "City": "Caserta",
+          "Count": 280,
+          "Latitude": 41.20351925,
+          "Longitude": 14.116862382970815
+        },
+        {
+          "City": "Bari",
+          "Count": 278,
+          "Latitude": 41.1257843,
+          "Longitude": 16.8620293
+        },
+        {
+          "City": "Genoa",
+          "Count": 252,
+          "Latitude": 44.40726,
+          "Longitude": 8.9338624
+        },
+        {
+          "City": "Catania",
+          "Count": 245,
+          "Latitude": 37.5023612,
+          "Longitude": 15.0873718
+        },
+        {
+          "City": "Palermo",
+          "Count": 242,
+          "Latitude": 38.1112268,
+          "Longitude": 13.3524434
+        },
+        {
+          "City": "Fisciano",
+          "Count": 228,
+          "Latitude": 40.772812,
+          "Longitude": 14.799443
+        },
+        {
+          "City": "Paris",
+          "Count": 222,
+          "Latitude": 48.8534951,
+          "Longitude": 2.3483915
+        },
+        {
+          "City": "Pavia",
+          "Count": 181,
+          "Latitude": 45.036854649999995,
+          "Longitude": 9.137825082826026
+        },
+        {
+          "City": "Perugia",
+          "Count": 181,
+          "Latitude": 43.1070321,
+          "Longitude": 12.402996209906487
+        },
+        {
+          "City": "Trieste",
+          "Count": 175,
+          "Latitude": 45.6496485,
+          "Longitude": 13.7772781
+        },
+        {
+          "City": "London",
+          "Count": 175,
+          "Latitude": 51.5073359,
+          "Longitude": -0.12765
+        },
+        {
+          "City": "Siena",
+          "Count": 153,
+          "Latitude": 43.1672254,
+          "Longitude": 11.467181161339118
+        },
+        {
+          "City": "Messina",
+          "Count": 149,
+          "Latitude": 38.1937571,
+          "Longitude": 15.5542082
+        },
+        {
+          "City": "Rende",
+          "Count": 140,
+          "Latitude": 39.3319934,
+          "Longitude": 16.1843828
+        },
+        {
+          "City": "Munich",
+          "Count": 133,
+          "Latitude": 48.1371079,
+          "Longitude": 11.5753822
+        },
+        {
+          "City": "Madrid",
+          "Count": 126,
+          "Latitude": 40.4167047,
+          "Longitude": -3.7035825
+        },
+        {
+          "City": "Cagliari",
+          "Count": 122,
+          "Latitude": 39.2171994,
+          "Longitude": 9.113311
+        },
+        {
+          "City": "Parma",
+          "Count": 119,
+          "Latitude": 44.8013678,
+          "Longitude": 10.3280833
+        },
+        {
+          "City": "Udine",
+          "Count": 111,
+          "Latitude": 46.0634632,
+          "Longitude": 13.2358377
+        },
+        {
+          "City": "Lecce",
+          "Count": 109,
+          "Latitude": 40.152217300000004,
+          "Longitude": 18.2260628338229
+        },
+        {
+          "City": "Trento",
+          "Count": 107,
+          "Latitude": 46.1029536,
+          "Longitude": 11.12974249416882
+        },
+        {
+          "City": "Venice",
+          "Count": 106,
+          "Latitude": 45.4371908,
+          "Longitude": 12.3345898
+        },
+        {
+          "City": "Modena",
+          "Count": 102,
+          "Latitude": 44.5384728,
+          "Longitude": 10.935960870530739
+        },
+        {
+          "City": "Ferrara",
+          "Count": 100,
+          "Latitude": 44.766764249999994,
+          "Longitude": 11.827938995640167
+        },
+        {
+          "City": "Catanzaro",
+          "Count": 99,
+          "Latitude": 38.82996034999999,
+          "Longitude": 16.43155687627833
+        },
+        {
+          "City": "L\u2019Aquila",
+          "Count": 89,
+          "Latitude": 42.1368853,
+          "Longitude": 13.610341022538911
+        },
+        {
+          "City": "Ancona",
+          "Count": 89,
+          "Latitude": 43.480120400000004,
+          "Longitude": 13.218790609151764
+        },
+        {
+          "City": "Verona",
+          "Count": 86,
+          "Latitude": 45.4384958,
+          "Longitude": 10.9924122
+        },
+        {
+          "City": "Brescia",
+          "Count": 82,
+          "Latitude": 45.77958045,
+          "Longitude": 10.4258729694612
+        },
+        {
+          "City": "Cambridge",
+          "Count": 82,
+          "Latitude": 52.2055314,
+          "Longitude": 0.1186637
+        },
+        {
+          "City": "Lisbon",
+          "Count": 79,
+          "Latitude": 38.7077507,
+          "Longitude": -9.1365919
+        },
+        {
+          "City": "Barcelona",
+          "Count": 78,
+          "Latitude": 41.3828939,
+          "Longitude": 2.1774322
+        },
+        {
+          "City": "Chieti",
+          "Count": 77,
+          "Latitude": 42.10271755,
+          "Longitude": 14.415935255784948
+        },
+        {
+          "City": "Brussels",
+          "Count": 75,
+          "Latitude": 50.8465573,
+          "Longitude": 4.351697
+        },
+        {
+          "City": "Athens",
+          "Count": 75,
+          "Latitude": 37.9839412,
+          "Longitude": 23.7283052
+        },
+        {
+          "City": "Vercelli",
+          "Count": 73,
+          "Latitude": 45.55538265,
+          "Longitude": 8.346283678327271
+        },
+        {
+          "City": "Sassari",
+          "Count": 71,
+          "Latitude": 40.7232643,
+          "Longitude": 8.5610074
+        },
+        {
+          "City": "Amsterdam",
+          "Count": 66,
+          "Latitude": 52.3730796,
+          "Longitude": 4.8924534
+        },
+        {
+          "City": "Stockholm",
+          "Count": 66,
+          "Latitude": 59.3251172,
+          "Longitude": 18.0710935
+        },
+        {
+          "City": "Potenza",
+          "Count": 65,
+          "Latitude": 40.5183188,
+          "Longitude": 15.82095999021995
+        },
+        {
+          "City": "Cassino",
+          "Count": 64,
+          "Latitude": 41.4925576,
+          "Longitude": 13.8305297
+        },
+        {
+          "City": "Benevento",
+          "Count": 64,
+          "Latitude": 41.2476307,
+          "Longitude": 14.705705363146528
+        }
+      ],
+      "elevationRange": [
+        1,
+        2964
+      ],
+      "elevationScale": "@@=Count",
+      "extruded": true,
+      "getPosition": "@@=[Longitude, Latitude]",
+      "id": "924ec95d-84a4-497e-9701-6fcc46c7ed50",
+      "pickable": true
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = true;
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>

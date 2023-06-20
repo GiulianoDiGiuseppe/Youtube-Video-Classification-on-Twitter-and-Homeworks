@@ -1,0 +1,7 @@
+pandas
+plotly_express
+plotly
+streamlit
+json5
+folium
+streamlit_folium
